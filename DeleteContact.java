@@ -1,7 +1,7 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class DeleteContact extends MyFrame {
     private JTextField searchField;
@@ -32,7 +32,7 @@ public class DeleteContact extends MyFrame {
         // Reset insets
         gbc.insets = new Insets(10, 10, 10, 10);
 
-        // Search Field
+        // Search Fields
         searchField = new JTextField(20);
         JButton searchButton = new JButton("Search");
         gbc.gridx = 0;
