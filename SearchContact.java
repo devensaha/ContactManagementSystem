@@ -10,14 +10,12 @@ public class SearchContact extends MyFrame {
     public SearchContact() {
         setTitle("SEARCH CONTACT");
 
-        // Create the panel for the form
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(Color.WHITE);
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Header
         JLabel header = new JLabel("SEARCH CONTACT", JLabel.CENTER);
         header.setFont(new Font("Arial", Font.BOLD, 24));
         header.setOpaque(true);
@@ -28,10 +26,8 @@ public class SearchContact extends MyFrame {
         gbc.insets = new Insets(20, 10, 20, 10);
         panel.add(header, gbc);
 
-        // Reset insets
         gbc.insets = new Insets(10, 10, 10, 10);
 
-        // Search Field
         searchField = new JTextField(20);
         JButton searchButton = new JButton("Search");
         gbc.gridy = 1;
@@ -40,7 +36,6 @@ public class SearchContact extends MyFrame {
         gbc.gridx = 1;
         panel.add(searchButton, gbc);
 
-        // Labels for displaying contact information
         contactIdLabel = createLabel("Contact ID");
         nameLabel = createLabel("Name");
         contactNumberLabel = createLabel("Contact Number");
@@ -48,7 +43,6 @@ public class SearchContact extends MyFrame {
         salaryLabel = createLabel("Salary");
         birthdayLabel = createLabel("Birthday");
 
-        // Add labels to the panel
         addFormField(panel, gbc, contactIdLabel, 2);
         addFormField(panel, gbc, nameLabel, 3);
         addFormField(panel, gbc, contactNumberLabel, 4);
@@ -56,13 +50,11 @@ public class SearchContact extends MyFrame {
         addFormField(panel, gbc, salaryLabel, 6);
         addFormField(panel, gbc, birthdayLabel, 7);
 
-        // Back button
         JButton backButton = new JButton("Back To Homepage");
         gbc.gridy = 8;
         gbc.gridwidth = 2;
         panel.add(backButton, gbc);
 
-        // Action listener for the "Search" button
         searchButton.addActionListener(e -> {
             String search = searchField.getText();
             indexOfContact = ContactManager.searchContactIndex(search);
@@ -76,7 +68,6 @@ public class SearchContact extends MyFrame {
             }
         });
 
-        // Action listener for the "Back To Homepage" button
         backButton.addActionListener(e -> {
             new HomeScreen().setVisible(true);
             dispose();

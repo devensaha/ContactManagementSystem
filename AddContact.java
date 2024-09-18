@@ -8,22 +8,22 @@ public class AddContact extends MyFrame {
     public AddContact() {
         setTitle("ADD CONTACT");
 
-        // Create the panel for the form
+       
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(Color.WHITE);
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Header
+      
         JLabel header = createLabel("ADD CONTACT", new Font("Arial", Font.BOLD, 24), Color.CYAN, JLabel.CENTER);
         addComponent(panel, header, gbc, 0, 0, 2, new Insets(20, 10, 20, 10));
 
-        // Contact ID
+      
         JLabel contactIdLabel = createLabel("Contact ID - " + generateContactId(), new Font("Arial", Font.PLAIN, 16));
         addComponent(panel, contactIdLabel, gbc, 0, 1, 2);
 
-        // Form fields
+       
         nameField = new JTextField(20);
         contactNumberField = new JTextField(20);
         companyField = new JTextField(20);
@@ -36,7 +36,7 @@ public class AddContact extends MyFrame {
         addFormField(panel, gbc, "Salary", salaryField, 5);
         addFormField(panel, gbc, "Birthday", birthdayField, 6);
 
-        // Buttons
+        
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         JButton addButton = new JButton("ADD Contact");
         JButton clearButton = new JButton("Clear");
@@ -47,7 +47,7 @@ public class AddContact extends MyFrame {
         buttonPanel.add(backButton);
         addComponent(panel, buttonPanel, gbc, 0, 7, 2);
 
-        // Button action listeners
+       
         backButton.addActionListener(e -> {
             new HomeScreen().setVisible(true);
             dispose();

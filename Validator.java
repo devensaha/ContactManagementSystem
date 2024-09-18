@@ -3,7 +3,6 @@ import java.time.format.DateTimeFormatter;
 
 public class Validator {
 
-    // phonenumber validator
     public static boolean phoneNumberValidator(String phoneNumber) {
         try {
             if (phoneNumber.charAt(0) != '0' || phoneNumber.length() > 10 || phoneNumber.length() < 10) {
@@ -16,7 +15,6 @@ public class Validator {
         }
     }
 
-    // salary validator
     public static boolean salaryValidator(String salary) {
         try {
             double salaryDouble = Double.parseDouble(salary);
@@ -36,7 +34,6 @@ public class Validator {
         return true;
     }
 
-    // validate birthday
     public static boolean dataValidator(String birthdayString) {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 

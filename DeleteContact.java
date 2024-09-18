@@ -29,10 +29,10 @@ public class DeleteContact extends MyFrame {
         gbc.insets = new Insets(20, 10, 20, 10);
         panel.add(header, gbc);
 
-        // Reset insets
+       
         gbc.insets = new Insets(10, 10, 10, 10);
 
-        // Search Fields
+        
         searchField = new JTextField(20);
         JButton searchButton = new JButton("Search");
         gbc.gridx = 0;
@@ -42,7 +42,6 @@ public class DeleteContact extends MyFrame {
         gbc.gridx = 1;
         panel.add(searchButton, gbc);
 
-        // Labels for displaying contact information
         contactIdLabel = createLabel("Contact ID");
         nameLabel = createLabel("Name");
         contactNumberLabel = createLabel("Contact Number");
@@ -50,7 +49,7 @@ public class DeleteContact extends MyFrame {
         salaryLabel = createLabel("Salary");
         birthdayLabel = createLabel("Birthday");
 
-        // Add labels to the panel
+        
         addFormField(panel, gbc, contactIdLabel, 2);
         addFormField(panel, gbc, nameLabel, 3);
         addFormField(panel, gbc, contactNumberLabel, 4);
@@ -58,7 +57,7 @@ public class DeleteContact extends MyFrame {
         addFormField(panel, gbc, salaryLabel, 6);
         addFormField(panel, gbc, birthdayLabel, 7);
 
-        // Action buttons
+    
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
 
@@ -171,10 +170,10 @@ public class DeleteContact extends MyFrame {
     }
 
     private int showConfirmationPopup(String message) {
-        // Custom options for the dialog
+       
         Object[] options = { "Confirm Delete", "Cancel" };
 
-        // Show the confirmation dialog
+     
         int option = JOptionPane.showOptionDialog(
                 this,
                 message,
@@ -185,7 +184,7 @@ public class DeleteContact extends MyFrame {
                 options,
                 options[1]);
 
-        // Return 1 for "Confirm Delete" and -1 for "Cancel"
+      
         if (option == JOptionPane.YES_OPTION) {
             return 1;
         } else {

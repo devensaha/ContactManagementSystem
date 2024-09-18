@@ -7,29 +7,23 @@ public class SortContact extends MyFrame {
     public SortContact() {
         setTitle("Contacts List");
 
-        // Create the main panel with GridBagLayout
         JPanel mainPanel = createMainPanel();
         mainPanel.setBackground(Color.WHITE);
 
-        // Add main panel to frame
         add(mainPanel);
 
-        // Make the frame visible
         setVisible(true);
     }
 
-    // Method to create the main panel with layout and components
     private JPanel createMainPanel() {
         JPanel mainPanel = new JPanel(new GridBagLayout());
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         GridBagConstraints gbc = createGridBagConstraints();
 
-        // Create and add the title label
         JLabel titleLabel = createTitleLabel();
         gbc.gridy = 0;
         mainPanel.add(titleLabel, gbc);
 
-        // Create and add the buttons
         JButton listByNameButton = createButton("List by Name", e -> navigateToListContactsBy("NAME"));
         JButton listBySalaryButton = createButton("List by Salary", e -> navigateToListContactsBy("SALARY"));
         JButton listByBirthdayButton = createButton("List by Birthday", e -> navigateToListContactsBy("BIRTHDAY"));
@@ -44,7 +38,6 @@ public class SortContact extends MyFrame {
         gbc.gridy = 3;
         mainPanel.add(listByBirthdayButton, gbc);
 
-        // Use weighty to push the button down
         gbc.gridy = 4;
         gbc.weighty = 1;
         mainPanel.add(Box.createVerticalGlue(), gbc);
@@ -56,7 +49,6 @@ public class SortContact extends MyFrame {
         return mainPanel;
     }
 
-    // Method to create and return GridBagConstraints with common settings
     private GridBagConstraints createGridBagConstraints() {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10); // Add some padding between components
@@ -69,27 +61,23 @@ public class SortContact extends MyFrame {
         return gbc;
     }
 
-    // Method to create and return a JLabel for the title
     private JLabel createTitleLabel() {
         JLabel titleLabel = new JLabel("CONTACTS LIST");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         return titleLabel;
     }
 
-    // Method to create and return a JButton with specified text and action listener
     private JButton createButton(String text, ActionListener actionListener) {
         JButton button = new JButton(text);
         button.addActionListener(actionListener);
         return button;
     }
 
-    // Method to navigate to HomeScreen
     private void navigateToHomeScreen() {
         new HomeScreen().setVisible(true);
         dispose();
     }
 
-    // Method to navigate to ListContactsBy screen based on sort criteria
     private void navigateToListContactsBy(String sortBy) {
         new ListContactsBy(sortBy).setVisible(true);
         dispose();

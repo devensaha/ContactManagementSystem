@@ -12,10 +12,8 @@ public class MyFrame extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        // Set background color
         getContentPane().setBackground(Color.WHITE);
 
-        // Add IMAGE
         ImageIcon image = new ImageIcon("icons/contact.png");
         setIconImage(image.getImage());
     }

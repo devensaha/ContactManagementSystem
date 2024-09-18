@@ -12,7 +12,6 @@ public class UpdateContact extends MyFrame {
     public UpdateContact() {
         setTitle("UPDATE CONTACT");
 
-        // Create the panel for the form
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
         panel.setBackground(Color.WHITE);
@@ -20,7 +19,6 @@ public class UpdateContact extends MyFrame {
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Header
         JLabel header = new JLabel("UPDATE CONTACT", JLabel.CENTER);
         header.setFont(new Font("Arial", Font.BOLD, 24));
         header.setOpaque(true);
@@ -31,10 +29,8 @@ public class UpdateContact extends MyFrame {
         gbc.insets = new Insets(20, 10, 20, 10);
         panel.add(header, gbc);
 
-        // Reset insets
         gbc.insets = new Insets(10, 10, 10, 10);
 
-        // Search Field
         searchField = new JTextField(20);
         JButton searchButton = new JButton("Search");
         gbc.gridx = 0;
@@ -44,7 +40,6 @@ public class UpdateContact extends MyFrame {
         gbc.gridx = 1;
         panel.add(searchButton, gbc);
 
-        // Labels for displaying contact information
         contactIdLabel = createLabel("Contact ID");
         nameLabel = createLabel("Name");
         contactNumberLabel = createLabel("Contact Number");
@@ -52,7 +47,6 @@ public class UpdateContact extends MyFrame {
         salaryLabel = createLabel("Salary");
         birthdayLabel = createLabel("Birthday");
 
-        // Add labels to the panel
         addFormField(panel, gbc, contactIdLabel, 2);
         addFormField(panel, gbc, nameLabel, 3);
         addFormField(panel, gbc, contactNumberLabel, 4);
@@ -60,7 +54,6 @@ public class UpdateContact extends MyFrame {
         addFormField(panel, gbc, salaryLabel, 6);
         addFormField(panel, gbc, birthdayLabel, 7);
 
-        // Action buttons
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
 
@@ -84,7 +77,6 @@ public class UpdateContact extends MyFrame {
         add(panel);
         setVisible(true);
 
-        // Action listener for the "Search" button
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -114,7 +106,6 @@ public class UpdateContact extends MyFrame {
             }
         });
 
-        // Action listener for the "Back To Homepage" button
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -123,7 +114,6 @@ public class UpdateContact extends MyFrame {
             }
         });
 
-        // Action listener for the "clear" button
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
